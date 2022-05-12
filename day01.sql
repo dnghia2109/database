@@ -27,9 +27,9 @@ CREATE TABLE book(
 	title text NOT NULL,
 	year_release text,
 	id_publisher int NOT NULL,
-	id_author  int NOT NULL,
+	-- id_author  int NOT NULL,
 	poster text,
-	id_category int NOT NULL,
+	-- id_category int NOT NULL,
 	FOREIGN KEY (id_publisher) REFERENCES publisher(id)
 )
 
