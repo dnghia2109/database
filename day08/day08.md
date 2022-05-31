@@ -43,7 +43,7 @@ WHERE tt.name = 'TV Series' AND m.current_episode = m.episode
 
 4. **Liệt kê tên phim và trailer có trạng thái active của phim đó**
 ```sql
-SELECT m.title AS 'Movie title' , mt.status AS 'Trailer status'
+SELECT m.title AS 'Movie title' , t.link AS Trailer
 FROM movie m INNER JOIN movie_trailer mt 
 ON m.id = mt.id_movie 
 INNER JOIN trailer t ON t.id = mt.id_trailer 
