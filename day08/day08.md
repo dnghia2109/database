@@ -87,7 +87,7 @@ ORDER BY release_date DESC
 
 7. **Liệt kê tiêu đề, mô tả, đạo diễn, biên kịch (array), poster, độ dài, thể loại (bảng genres - trả về dữ liệu dạng array), tên diễn viên (array) của các phim thuộc loại Movie của 10 bộ phim có điểm imdb cao nhất**
 ```sql
-SELECT m.title AS 'Movie title' , m.description AS Description , m.poster AS Poster , JSON_ARRAYAGG(g.name) AS Genres,
+SELECT m.title AS 'Movie title' , m.description AS Description , JSON_ARRAYAGG(w.full_name) AS Writers  , m.poster AS Poster , JSON_ARRAYAGG(g.name) AS Genres,
 	   JSON_ARRAYAGG(a.full_name) AS Actors , m.imdb AS Imdb 
 FROM movie m INNER JOIN movie_writers mw 
 ON m.id = mw.id_movie 
